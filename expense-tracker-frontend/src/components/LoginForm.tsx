@@ -18,15 +18,12 @@ export default function LoginForm({
       alert("Email y contraseña requeridos");
       return;
     }
-
-    const response = await fetch(
-      "https://expense-tracker-api-7umy.onrender.com/auth/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      },
-    );
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    const response = await fetch(`${API_URL}/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
     if (!response.ok) {
       const error = await response.json();
