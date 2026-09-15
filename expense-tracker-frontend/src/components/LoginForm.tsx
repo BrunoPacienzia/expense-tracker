@@ -18,7 +18,7 @@ export default function LoginForm({
       alert("Email y contraseña requeridos");
       return;
     }
-    const API_URL = import.meta.env.API_URL || "http://localhost:5000";
+    const API_URL = "https://expense-tracker-api-7umy.onrender.com";
     const response = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

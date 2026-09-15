@@ -29,7 +29,7 @@ interface Gasto {
   date: string | Date;
 }
 
-const API_URL = import.meta.env.API_URL || "http://localhost:5000";
+const API_URL = "https://expense-tracker-api-7umy.onrender.com";
 const currency = new Intl.NumberFormat("es-AR", {
   style: "currency",
   currency: "ARS",
